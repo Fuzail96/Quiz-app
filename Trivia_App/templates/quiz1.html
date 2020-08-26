@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia App</title>
+
+</head>
+<body>
+    <center>
+        <h1>Trivia App Quiz</h1>
+    </center>
+    <hr/>
+    <div style="padding-left: 30px;">
+        {% for result in Exam %}
+      <form  class="adding" method="POST" action="quiz2" >
+            {% csrf_token %}
+        <table>
+            <tr>
+                <td>{{result.ques_no}} ) {{result.question}}</td>
+            </tr>
+            <tr>
+                <td><input type="radio" id="Option1" name="option" value="{{result.opt1}}"> {{result.opt1}} </td>
+            </tr>
+            <tr>
+                <td><input type="radio" id="Option2"  name="option" value="{{result.opt2}}"> {{result.opt2}}</td>
+            </tr>
+            <tr>
+                <td><input type="radio" id="Option3" name="option" value="{{result.opt3}}"> {{result.opt3}}</td>
+            </tr>
+            <tr>
+                <td><input type="radio" id="Option4" name="option" value="{{result.opt4}}"> {{result.opt4}}</td>
+            </tr>
+
+            <tr>
+
+
+                <td style="padding-top: 30px;"><input type="submit" name="submit" id="submit" class="form-submit"  value="Next" /></td><br/>
+            </tr>
+
+        </table>
+      </form>
+        {% endfor %}
+        <br/>
+        <hr/>
+
+
+    </div>
+
+
+
+</body>
+</html>

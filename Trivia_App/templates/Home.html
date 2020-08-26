@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia App</title>
+</head>
+<body>
+    <center>
+        <h1>Trivia App Quiz</h1>
+    </center>
+    <hr/>
+    <div style="padding-left: 30px;">
+        {% for result in Exam %}
+
+        <form  class="adding" method="POST" action="quiz1" >
+            {% csrf_token %}
+        <table>
+            <tr>
+                <td> {{result.question}}</td> <br/>
+            </tr>
+
+            <tr>
+
+
+                <td style="padding-top: 20px;"><input type="text" id="Name" name="name" style="width: 500px;" ></td> <br/>
+            </tr>
+
+            <tr>
+
+
+                <td style="padding-top: 30px;"><input type="submit" name="submit" id="submit" class="form-submit"  value="Next" /></td><br/>
+            </tr>
+
+        </table>
+      </form>
+        <br/>
+
+        {% endfor %}
+         <hr/>
+
+
+    </div>
+
+
+
+</body>
+</html>
