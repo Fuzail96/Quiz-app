@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load get_index %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia App</title>
+</head>
+<body>
+    <center>
+        <h1>SUMMARY</h1>
+    </center>
+    <hr/>
+
+    <div style="padding-left: 30px;">
+        <div>
+        {% for ans in answers|slice:"0:1" %}
+            <p> Hello {{ans.ans}}, </p>
+        {% endfor %}
+        </div>
+
+        <div>
+            <p> Here are the answers selected : </p>
+        {% for result in Exam|slice:"1:" %}
+                <p>{{result.question}}</p>
+                <p> Answer: {{answers|get_index:forloop.counter}}</p>
+        {% endfor %}
+
+        </div>
+
+
+
+                <td style="padding-top: 30px;"><a href="/" class="Finish-link">Finish</a> </td><br/>
+
+
+    </div>
+
+
+
+
+</body>
+</html>
